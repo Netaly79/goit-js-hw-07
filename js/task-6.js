@@ -12,22 +12,21 @@ const boxesContainer = document.getElementById('boxes');
 
 createButton.addEventListener('click', onCreate);
 destroyButton.addEventListener('click', onDestroy);
-let amount = 0;
 
 function onCreate() {
-  amount = Number(input.value);
+  const amount = Number(input.value);
   if (amount < 1 || amount > 100) {
     return;
   }
   destroyBoxes();
-  create(amount);
+  createBoxes(amount);
 }
 
 function onDestroy() {
   destroyBoxes();
 }
 
-function create() {
+function createBoxes(amount) {
   const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < amount; i++) {
